@@ -3,7 +3,7 @@
 Computer::Computer() : name("Computer") {}
 
 char Computer::makeMove() {
-    return 'R'; // Computer always plays Rock
+    return 'R';//(?)
 }
 
 std::string Computer::getName() {

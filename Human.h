@@ -4,13 +4,13 @@
 #include "Player.h"
 
 class Human : public Player {
-public:
+    private:
+    std::string name;
+    public:
     Human();
     explicit Human(const std::string& playerName);
     char makeMove() override;
     std::string getName() override;
-private:
-    std::string name;
 };
 
-#endif // HUMAN_H
+#endif

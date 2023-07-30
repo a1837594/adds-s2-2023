@@ -5,26 +5,29 @@
 #include "Referee.h"
 
 int main() {
-    // Create players
-    Player* humanPlayer = new Human("Mei");
-    Player* computerPlayer = new Computer();
+    //insert name
+    std::cout << "Enter your name: ";
+    char name;
+    std::cin >> name;
 
-    // Create referee
+    //create players
+    Player* human = new Human(name);
+    Player* computer = new Computer();
     Referee referee;
 
-    // Get the winning player
-    Player* winner = referee.refGame(humanPlayer, computerPlayer);
+    //compare
+    Player* winner = referee.refGame(human, computer);
 
-    // Determine the winner
+    //result
     if (winner == nullptr) {
         std::cout << "It's a Tie\n";
     } else {
         std::cout << winner->getName() << " Wins\n";
     }
 
-    // Clean up
-    delete humanPlayer;
-    delete computerPlayer;
+    //delete
+    delete human;
+    delete computer;
 
     return 0;
 }

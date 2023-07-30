@@ -4,12 +4,12 @@
 #include "Player.h"
 
 class Computer : public Player {
-public:
+    private:
+    std::string name;
+    public:
     Computer();
     char makeMove() override;
     std::string getName() override;
-private:
-    std::string name;
 };
 
 #endif // COMPUTER_H

@@ -3,11 +3,11 @@
 
 #include <string>
 
-class Player {
+class Player {//abstract class
 public:
     virtual char makeMove() = 0;
     virtual std::string getName() = 0;
-    virtual ~Player() {} // Virtual destructor for polymorphic behavior
+    virtual ~Player() {}
 };
 
-#endif // PLAYER_H
+#endif
