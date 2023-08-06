@@ -3,8 +3,6 @@
 
 #include "Player.h"
 #include <string>
-#include <iostream>
-#include "Move.h"
 
 class Human : public Player {
 private:

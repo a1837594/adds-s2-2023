@@ -2,7 +2,6 @@
 #define COMPUTER_H
 
 #include "Player.h"
-#include "Move.h"
 
 class Computer : public Player {
 public:
@@ -11,4 +10,3 @@ public:
 };
 
 #endif // COMPUTER_H
-
