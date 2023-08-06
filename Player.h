@@ -4,11 +4,11 @@
 #include "Move.h"
 #include <string>
 
-class Player {//abstract class
+class Player {
 public:
     virtual Move* makeMove() = 0;
-    virtual std::string getName() = 0;//this will be used to save the players name
-    virtual ~Player() {}
+    virtual std::string getName() = 0;
 };
 
-#endif
+#endif // PLAYER_H
+
