@@ -3,10 +3,7 @@
 #include <iostream>
 
 Human::Human(){
-    std::cout << "Enter your name: ";
-    char name;
-    std::cin >> name;
-    this->name=name;
+    this->name="Human";
 }
 
 Human::Human(const std::string& playerName) : name(playerName) {}
