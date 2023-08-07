@@ -8,7 +8,7 @@ Human::Human(const std::string& playerName) : name(playerName) {}
 
 Move* Human::makeMove() {
     std::string input;
-    std::cout << "Enter your move ";
+    //std::cout << "Enter your move ";
     std::cin >> input;
 
     if (input == "Scissors") {
