@@ -9,7 +9,7 @@ Human::Human(){
     this->name=name;
 }
 
-//Human::Human(const std::string& playerName) : name(playerName) {}
+Human::Human(const std::string& playerName) : name(playerName) {}
 
 Move* Human::makeMove() {
     std::string input;
