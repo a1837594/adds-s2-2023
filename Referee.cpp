@@ -3,17 +3,16 @@
 Referee::Referee() {}
 
 Player* Referee::refGame(Player* player1, Player* player2) {
-    Move* move1 = player1->makeMove();
-    Move* move2 = player2->makeMove();
+    char move1 = player1->makeMove();
+    char move2 = player2->makeMove();
 
-    bool player1Wins = move1->beats(move2);
-    bool player2Wins = move2->beats(move1);
-
-    if (player1Wins) {
+    if (move1 == move2) {
+        return nullptr; //tie
+    } else if ((move1 == 'R' && move2 == 'S') ||
+               (move1 == 'S' && move2 == 'P') ||
+               (move1 == 'P' && move2 == 'R')) {
         return player1;
-    } else if (player2Wins) {
-        return player2;
     } else {
-        return nullptr; // It's a tie
+        return player2;
     }
 }

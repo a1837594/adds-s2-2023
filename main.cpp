@@ -1,26 +1,33 @@
+#include <iostream>
+#include "Player.h"
 #include "Human.h"
 #include "Computer.h"
 #include "Referee.h"
-#include "Move.h"
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
 
 int main() {
-    srand(time(nullptr)); // Seed the random number generator
+    //insert name
+    std::cout << "Enter your name: ";
+    char name;
+    std::cin >> name;
 
-    Human mei("Mei");
-    Computer computer;
-
+    //create players
+    Player* human = new Human(name);
+    Player* computer = new Computer();
     Referee referee;
-    Player* winner = referee.refGame(&mei, &computer);
 
+    //compare
+    Player* winner = referee.refGame(human, computer);
+
+    //result
     if (winner == nullptr) {
-        std::cout << "It's a Tie" << std::endl;
+        std::cout << "It's a Tie\n";
     } else {
-        std::cout << winner->getName() << " Wins" << std::endl;
+        std::cout << winner->getName() << " Wins\n";
     }
+
+    //delete
+    delete human;
+    delete computer;
 
     return 0;
 }
-
