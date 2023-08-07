@@ -9,7 +9,7 @@ class Human : public Player {
     std::string name;
     public:
     Human();
-    explicit Human(const std::string& playerName);
+    //explicit Human(const std::string& playerName);
     Move* makeMove() override;
     std::string getName() override;
 };
