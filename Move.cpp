@@ -41,3 +41,68 @@ bool Rock::beats(Move *opp) {
     }
     return false;
 }
+
+Monkey::Monkey(): name("Monkey"){};
+
+string Monkey::getName(){
+    return this->name;
+}
+
+bool Monkey::beats(Move *opp) {
+    if (dynamic_cast<Ninja*>(opp)||dynamic_cast<Robot*>(opp)) {
+        return true;
+    }
+    return false;
+}
+
+Robot::Robot(): name("Robot"){};
+
+string Robot::getName(){
+    return this->name;
+}
+
+bool Robot::beats(Move *opp) {
+    if (dynamic_cast<Ninja*>(opp)||dynamic_cast<Zombie*>(opp)) {
+        return true;
+    }
+    return false;
+}
+
+Ninja::Ninja(): name("Ninja"){};
+
+string Ninja::getName(){
+    return this->name;
+}
+
+bool Ninja::beats(Move *opp) {
+    if (dynamic_cast<Pirate*>(opp)||dynamic_cast<Zombie*>(opp)) {
+        return true;
+    }
+    return false;
+}
+
+Pirate::Pirate(): name("Pirate"){};
+
+string Pirate::getName(){
+    return this->name;
+}
+
+bool Pirate::beats(Move *opp) {
+    if (dynamic_cast<Monkey*>(opp)||dynamic_cast<Robot*>(opp)) {
+        return true;
+    }
+    return false;
+}
+
+Zombie::Zombie(): name("Zombie"){};
+
+string Zombie::getName(){
+    return this->name;
+}
+
+bool Zombie::beats(Move *opp) {
+    if (dynamic_cast<Monkey*>(opp)||dynamic_cast<Pirate*>(opp)) {
+        return true;
+    }
+    return false;
+}

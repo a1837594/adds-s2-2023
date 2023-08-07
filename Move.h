@@ -38,4 +38,49 @@ class Rock: public Move{
     bool beats(Move *opp) override;
 };
 
+class Monkey: public Move{
+    private:
+    std::string name;
+    public:
+    Monkey();
+    std::string getName() override;
+    bool beats(Move *opp) override;
+};
+
+class Robot: public Move{
+    private:
+    std::string name;
+    public:
+    Robot();
+    std::string getName() override;
+    bool beats(Move *opp) override;
+};
+
+class Ninja: public Move{
+    private:
+    std::string name;
+    public:
+    Ninja();
+    std::string getName() override;
+    bool beats(Move *opp) override;
+};
+
+class Pirate: public Move{
+    private:
+    std::string name;
+    public:
+    Pirate();
+    std::string getName() override;
+    bool beats(Move *opp) override;
+};
+
+class Zombie: public Move{
+    private:
+    std::string name;
+    public:
+    Zombie();
+    std::string getName() override;
+    bool beats(Move *opp) override;
+};
+
 #endif
