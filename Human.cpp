@@ -2,9 +2,15 @@
 
 #include <iostream>
 
-Human::Human() : name("Human") {}
+Human::Human(){
+        //insert name
+    std::cout << "Enter your name: ";
+    char name;
+    std::cin >> name;
+    name=name;
+}
 
-Human::Human(const std::string& playerName) : name(playerName) {}
+//Human::Human(const std::string& playerName) : name(playerName) {}
 
 Move* Human::makeMove() {
     std::string input;
@@ -17,6 +23,21 @@ Move* Human::makeMove() {
         return new Paper();
     } else if (input == "Rock") {
         return new Rock();
+    }
+    else if (input == "Ninja") {
+        return new Ninja();
+    }
+    else if (input == "Robot") {
+        return new Robot();
+    }
+    else if (input == "Pirate") {
+        return new Pirate();
+    }
+    else if (input == "Monkey") {
+        return new Monkey();
+    }
+    else if (input == "Zombie") {
+        return new Zombie();
     }
 }
 
