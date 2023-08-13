@@ -7,7 +7,7 @@ class Reverser{
     public:
     int reverseDigit(int value);
     std::string reverseString(std::string characters);
-    //std::string reverseString(const char *input);
+    std::string reverseString(std::string characters,int stat);
 };
 
 #endif

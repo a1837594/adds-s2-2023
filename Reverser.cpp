@@ -1,7 +1,7 @@
 #include "Reverser.h"
 #include <iostream>
-#include <string>
 #include <typeinfo>
+#include <string>
 
 int Reverser::reverseDigit(int value){
     if(value<0){
@@ -32,15 +32,21 @@ int Reverser::reverseDigit(int value){
 }
 
 std::string Reverser::reverseString(std::string characters) {
-        char firstChar = characters[0];
-        std::string remainingChars = characters.substr(1);
-        std::string reversedRemaining = reverseString(remainingChars);
-        return reversedRemaining + firstChar;
+    return reverseString(characters,characters.length());
 }
 
-// std::string Reverser::reverseString(const char *input) {
-//     if (input == nullptr) {
-//         return "ERROR";
-//     }
-//     return reverseString(std::string(input));
-// }
+std::string Reverser::reverseString(std::string characters,int stat) {
+    if(typeid(characters) != typeid(std::string)){
+        std::string erorr="ERROR";
+        return erorr;
+    }
+    else if(stat==1){
+        return characters;
+    }
+    else {
+        char lastLetter=characters.back();
+        characters.pop_back();
+        characters.insert(characters.length()-stat,1,lastLetter);
+        return reverseString(characters,stat--);
+    }
+}
