@@ -2,7 +2,7 @@
 #define TRUCKLOADS_H
 
 class Truckloads{
-    protected:
+    public:
     int numTrucks(int numCrates, int loadSize);
     int numTrucks(int numCrates, int loadSize,int stat);
 };
