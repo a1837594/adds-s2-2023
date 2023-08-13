@@ -1,6 +1,7 @@
 #include "Reverser.h"
 #include <iostream>
 #include <string>
+#include <typeinfo>
 
 int Reverser::reverseDigit(int value){
     if(value<0){
@@ -30,6 +31,20 @@ int Reverser::reverseDigit(int value){
     }
 }
 
-std::string Reverser::reverseString(std::string characters){
-    return characters;
+std::string reverseString(std::string characters) {
+    if (characters.empty()) {
+        return "";
+    } else {
+        char firstChar = characters[0];
+        std::string remainingChars = characters.substr(1);
+        std::string reversedRemaining = reverseString(remainingChars);
+        return reversedRemaining + firstChar;
+    }
+}
+
+std::string reverseString(const char *input) {
+    if (input == nullptr) {
+        return "ERROR";
+    }
+    return reverseString(std::string(input));
 }
