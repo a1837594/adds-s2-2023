@@ -9,8 +9,7 @@ int Truckloads::numTrucks(int numCrates, int loadSize, int stat){
     else{
         numCrates=numCrates/2;
         if(numCrates%1!=0) numCrates=static_cast<int>(std::ceil(numCrates));
-        stat++;
-        return numTrucks(numCrates,loadSize,stat);
+        return numTrucks(numCrates,loadSize,stat*2);
     }
 }//第一个是一共多少捆 第二个一辆车最多装几捆
 
