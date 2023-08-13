@@ -3,7 +3,10 @@
 #include <string>
 
 int Reverser::reverseDigit(int value){
-    if (value < 10) {
+    if(value<0){
+        return -1;
+    }
+    else if (value < 10) {
         return value;
     } else {
         int lastDigit = value % 10;
@@ -27,4 +30,6 @@ int Reverser::reverseDigit(int value){
     }
 }
 
-std::string Reverser::reverseString(std::string characters){}
+std::string Reverser::reverseString(std::string characters){
+    return characters;
+}
