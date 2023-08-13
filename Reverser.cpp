@@ -38,9 +38,9 @@ std::string Reverser::reverseString(std::string characters) {
         return reversedRemaining + firstChar;
 }
 
-std::string Reverser::reverseString(const char *input) {
-    if (input == nullptr) {
-        return "ERROR";
-    }
-    return reverseString(std::string(input));
-}
+// std::string Reverser::reverseString(const char *input) {
+//     if (input == nullptr) {
+//         return "ERROR";
+//     }
+//     return reverseString(std::string(input));
+// }
