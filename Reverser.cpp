@@ -32,7 +32,8 @@ int Reverser::reverseDigit(int value){
 }
 
 std::string Reverser::reverseString(std::string characters) {
-    return reverseString(characters,characters.length());
+    int x=characters.length();
+    return reverseString(characters,x);
 }
 
 std::string Reverser::reverseString(std::string characters,int stat) {
@@ -40,13 +41,14 @@ std::string Reverser::reverseString(std::string characters,int stat) {
         std::string erorr="ERROR";
         return erorr;
     }
-    else if(stat==1){
+    else if(stat<=1){
         return characters;
     }
     else {
         char lastLetter=characters.back();
+        int x=characters.length()-stat;
         characters.pop_back();
-        characters.insert(characters.length()-stat,1,lastLetter);
-        return reverseString(characters,stat--);
+        characters.insert(x,1,lastLetter);
+        return reverseString(characters,stat-1);
     }
 }
