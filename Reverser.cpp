@@ -31,18 +31,14 @@ int Reverser::reverseDigit(int value){
     }
 }
 
-std::string reverseString(std::string characters) {
-    if (characters.empty()) {
-        return "";
-    } else {
+std::string Reverser::reverseString(std::string characters) {
         char firstChar = characters[0];
         std::string remainingChars = characters.substr(1);
         std::string reversedRemaining = reverseString(remainingChars);
         return reversedRemaining + firstChar;
-    }
 }
 
-std::string reverseString(const char *input) {
+std::string Reverser::reverseString(const char *input) {
     if (input == nullptr) {
         return "ERROR";
     }
