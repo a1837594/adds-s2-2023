@@ -3,7 +3,10 @@
 #include <cmath>
 
 int Truckloads::numTrucks(int numCrates, int loadSize, int stat){
-    if(numCrates<=loadSize){
+    if(loadSize==1){
+        return numCrates;
+    }
+    else if(numCrates<=loadSize){
         return stat;
     }
     else{
