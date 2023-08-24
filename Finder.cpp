@@ -14,7 +14,7 @@ vector<int> Finder::findSubstrings(string s1, string s2) {
             std::boyer_moore_searcher(s2.begin(), s2.end()));
         it != s1.end()
         ){
-            result.push_back(it - s1.begin());
+            result.push_back(distance(s1.begin(),it));
         }
         else{
             result.push_back(-1);
