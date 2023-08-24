@@ -10,7 +10,7 @@ vector<int> Finder::findSubstrings(string s1, string s2) {
         //     result.push_back(-1);
         //     break;
         // }
-        auto it=std::search(s1.begin(), s1.end(),s2.begin(), s2.end());
+        auto it=search(s1.begin(), s1.end(),s2.begin(), s2.end());
         if(it != s1.end()){
             result.push_back(distance(s1.begin(),it));
         }
