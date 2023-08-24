@@ -2,27 +2,19 @@
 using namespace std;
 vector<int> Finder::findSubstrings(string s1, string s2) {
     vector<int> result;
+    size_t start = 0;
     for(size_t i = 1; i <= s2.size(); i++) {
-        // size_t found = s1.find(s2.substr(0, i));
-        // if (found != string::npos) {
-        //     result.push_back(found);
-        // } else {
-        //     result.push_back(-1);
-        //     break;
-        // }
-        auto it=search(s1.begin(), s1.end(),boyer_moore_searcher(s2.begin(), s2.end()));
-        if(it != s1.end()){
-            result.push_back(distance(s1.begin(),it));
-        }
-        else{
-            result.push_back(-1);
+        auto found = s1.find(s2.subsstr(0, i), start);
+        if (found == string::npos) {
+            for(int j  = i; j < s2.size(); j++) {
+                result.push_back(-1);
+            }
             break;
         }
-    }
-    if(result.size()<s2.size()){
-        for(int i=0;i<s2.size()-result.size();i++){
-            result.push_back(-1);
+        else {
+            result.push_back(found);
+            start = found;
         }
-    }
+   }
     return result;
 }
