@@ -11,7 +11,7 @@ public:
     
     void insert(std::string word);
     std::vector<std::string> getSuggestions(std::string partialWord);
-    deleteTrie(TrieNode* node);
+    void deleteTrie(TrieNode* node);
 
 private:
     struct TrieNode {
