@@ -5,7 +5,12 @@ Autocomplete::Autocomplete() {
 }
 
 Autocomplete::~Autocomplete() {
+    clearTrie();
+}
+
+void Autocomplete::clearTrie() {
     deleteTrie(root);
+    root = new TrieNode();
 }
 
 void Autocomplete::deleteTrie(TrieNode* node) {

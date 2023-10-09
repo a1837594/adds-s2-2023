@@ -23,6 +23,7 @@ private:
     
     TrieNode* root;
     
+    void deleteTrie(TrieNode* node);
     void insertAddress(TrieNode* node, std::string address, int routerNumber);
     int findLongestMatchingPrefix(TrieNode* node, std::string address);
 };
