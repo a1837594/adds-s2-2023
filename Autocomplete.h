@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#ifndef AUTOCOMPLETE_H
+#define AUTOCOMPLETE_H
 
 class Autocomplete {
 public:

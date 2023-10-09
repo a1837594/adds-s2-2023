@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#ifndef PREFIXMATCHER_H
+#define PREFIXMATCHER_H
 
 class PrefixMatcher {
 public:
