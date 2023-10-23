@@ -38,7 +38,7 @@ bool DocumentManager::borrowDocument(int docid, int patronID) {
         };
         if(check2==true)break;
     }
-    if(check=false)return false;
+    if(check==false)return false;
     if (patrons.find(patronID) != patrons.end()) {
         Document& doc = documents[name];
         if (doc.patronsWithAccess.size() < doc.licenseLimit) {
