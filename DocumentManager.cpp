@@ -13,8 +13,14 @@ void DocumentManager::addPatron(int patronID) {
 }
 
 int DocumentManager::search(std::string name) {
-    if (documents.find(name) != documents.end()) {
-        return documents[name].docID;
+    // if (documents.find(name) != documents.end()) {
+    //     return documents[name].docID;
+    // }
+     for (const auto& pair : documents) {
+        const std::string& key = pair.first;
+        if(name==pair.first){
+            return pair.second.docID;
+        }
     }
     return 0;
 }
