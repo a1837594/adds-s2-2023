@@ -20,8 +20,21 @@ int DocumentManager::search(std::string name) {
 }
 
 bool DocumentManager::borrowDocument(int docid, int patronID) {
-    if (patrons.find(patronID) != patrons.end() && documents.find(docid) != documents.end()) {
-        Document& doc = documents[docid];
+    bool check=false;
+    std::string name;
+    for(const auto&pair : documents){
+        Document dc=pair.second;
+        bool check2=false;
+        if(dc.docID==docid){
+            check=true;
+            check2=true;
+            name=pair.first;
+        };
+        if(check2==true)break;
+    }
+    if(check=false)return false;
+    if (patrons.find(patronID) != patrons.end()) {
+        Document& doc = documents[name];
         if (doc.patronsWithAccess.size() < doc.licenseLimit) {
             doc.patronsWithAccess.insert(patronID);
             doc.borrowedCopies++;
@@ -32,8 +45,20 @@ bool DocumentManager::borrowDocument(int docid, int patronID) {
 }
 
 void DocumentManager::returnDocument(int docid, int patronID) {
-    if (patrons.find(patronID) != patrons.end() && documents.find(docid) != documents.end()) {
-        Document& doc = documents[docid];
+    bool check=false;
+    std::string name;
+    for(const auto&pair : documents){
+        Document dc=pair.second;
+        bool check2=false;
+        if(dc.docID==docid){
+            check=true;
+            check2=true;
+            name=pair.first;
+        };
+        if(check2==true)break;
+    }
+    if (patrons.find(patronID) != patrons.end()&&!name.empty()) {
+        Document& doc = documents[name];
         if (doc.patronsWithAccess.find(patronID) != doc.patronsWithAccess.end()) {
             doc.patronsWithAccess.erase(patronID);
             doc.borrowedCopies--;
