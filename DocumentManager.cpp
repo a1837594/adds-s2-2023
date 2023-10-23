@@ -46,13 +46,11 @@ bool DocumentManager::borrowDocument(int docid, int patronID) {
 }
 
 void DocumentManager::returnDocument(int docid, int patronID) {
-    bool check=false;
     std::string name;
     for(const auto&pair : documents){
         Document dc=pair.second;
         bool check2=false;
         if(dc.docID==docid){
-            check=true;
             check2=true;
             name=pair.first;
         };
