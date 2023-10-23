@@ -3,26 +3,21 @@
 DocumentManager::DocumentManager() : nextDocID(1) {}
 
 void DocumentManager::addDocument(std::string name, int id, int license_limit) {
-    if (documents.find(name) == documents.end()) {
-        documents[name] = {nextDocID++, license_limit, 0, {}};
-    }
+    // if (documents.find(name) == documents.end()) {
+    //     documents[name] = {nextDocID++, license_limit, 0, {}};
+    // }
+    Document value={id,license_limit,0,{}};
+    documents.emplace(name,value);
 }
 
 void DocumentManager::addPatron(int patronID) {
-    patrons[patronID] = true;
+    patrons.emplace(patronID,true);
 }
 
 int DocumentManager::search(std::string name) {
-    // if (documents.find(name) != documents.end()) {
-    //     return documents[name].docID;
-    // }
-     for (const auto& pair : documents) {
-        const std::string& key = pair.first;
-        if(name==pair.first){
-            return pair.second.docID;
-        }
+    if (documents.find(name) != documents.end()) {
+        return documents[name].docID;
     }
-    return 0;
 }
 
 bool DocumentManager::borrowDocument(int docid, int patronID) {
